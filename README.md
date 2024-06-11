@@ -3,6 +3,9 @@ Windows-Hardening is a repository for GPOs (domain and local) and scripts (event
 
 The aim is to maximize security while minimizing the impact on user experience, so some settings - such as more verbose logging - have been tuned to attempt balance. Each folder in the root directory of this project corresponds to a different Windows operating system. Additionally, there is documentation for each OS in this readme (see contents below)
 
+In the interest of giving credit where credit is due, some of these configurations are based off of the [Microsoft Security Compliance Toolkit 1.0](https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/windows-security-baselines) (See below)
+- Windows Server 2022 Security Baseline
+
 # Contents
 - [Project Overview](#project-overview)
 - [Contents](#contents)
