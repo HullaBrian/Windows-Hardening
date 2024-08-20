@@ -5,6 +5,7 @@ The aim is to maximize security while minimizing the impact on user experience, 
 
 In the interest of giving credit where credit is due, some of these configurations are based off of the [Microsoft Security Compliance Toolkit 1.0](https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/windows-security-baselines) (See below)
 - Windows Server 2022 Security Baseline
+- Windows 10 Security Baseline
 
 # Contents
 - [Project Overview](#project-overview)
