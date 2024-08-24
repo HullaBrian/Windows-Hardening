@@ -7,9 +7,11 @@
 | Windows 10 Build X         | `select * from Win32_OperatingSystem WHERE Version like "10.%" AND ProductType="1" AND BuildNumber = "X"`                               |
 | Windows 11                 | `select * from Win32_OperatingSystem WHERE Caption like "%Windows 11%"`                                                                 |
 | Windows 11 Build X         | `select * from Win32_OperatingSystem WHERE Caption like "%Windows 11%" AND ProductType="1" AND BuildNumber = "X"`                       |
+| Windows Workstations       | `select * from Win32_OperatingSystem WHERE ProductType = "1"`                                                                           |
 | Server 2016                | `select * from Win32_OperatingSystem WHERE Caption LIKE "%2016%" AND Version LIKE "10.%" AND ( ProductType = "2" or ProductType = "3")` |
 | Server 2019                | `select * from Win32_OperatingSystem WHERE Caption LIKE "%2019%" AND Version LIKE "10.%" AND ( ProductType = "2" or ProductType = "3")` |
 | Server 2022                | `select * from Win32_OperatingSystem WHERE Caption LIKE "%2022%" AND Version LIKE "10.%" AND ( ProductType = "2" or ProductType = "3")` |
+| Windows Server             | `select * from Win32_OperatingSystem WHERE ProductType = "2" or ProductType = "3"`                                                      |
 | Specific Subnet(s)         | `Select * FROM Win32_IP4RouteTable WHERE (Mask='255.255.255.255' AND (Destination Like 10.1.1.%' OR Destination Like '10.1.2.%'))`      |
 | X Bytes of RAM             | `Select * from WIN32_ComputerSystem where TotalPhysicalMemory >= X`                                                                     |
 | Specific Program Installed | `Select * From Win32_Product where Name like "%7-Zip %"`                                                                                |
@@ -22,14 +24,16 @@ The WMI filter allows you to select the operating system type:
 
 WMI query to select Windows version:
 `select * from Win32_OperatingSystem WHERE Version LIKE "X.X%"`
-- **Windows Server 2022,2019,2016 and Windows 11,10** — 10.%
-- **Windows Server 2012 R2 and Windows 8.1** — 6.3%
-- **Windows Server 2012 and Windows 8** — 6.2%
-- **Windows Server 2008 R2 and Windows 7** — 6.1%
-- **Windows Server 2008 and Windows Vista** — 6.0%
-- **Windows Server 2003** — 5.2%
-- **Windows XP** — 5.1%
-- **Windows 2000** — 5.0%
+| Operating System(s)                           | WMI OS Version String |
+|-----------------------------------------------|-----------------------|
+| Windows Server 2016,2019,2022 + Windows 10,11 | `10.%`                |
+| Windows Server 2012 R2 and Windows 8.1        | `6.3%`                |
+| Windows Server 2022 and Windows 8             | `6.2%`                |
+| Windows Server 2008 R2 and Windows 7          | `6.1%`                |
+| Windows Server 2008 and Windows Vista         | `6.0%`                |
+| Windows Server 2003                           | `5.2%`                |
+| Windows XP                                    | `5.1%`                |
+| Windows 2000                                  | `5.0%`                |
 
 # Examples
 - Only `Windows Server 2019`:
