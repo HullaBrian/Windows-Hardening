@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RegistrySettings clsid="{A3CCFC41-DFDB-43a5-8D26-0FE8B954DA51}"><Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="DisableLocalAdminMerge" status="DisableLocalAdminMerge" image="10" changed="2024-08-19 02:20:52" uid="{2CAA148C-1C29-49FE-97F1-4D0F25C5C3AC}"><Properties action="C" displayDecimal="0" default="0" hive="HKEY_LOCAL_MACHINE" key="SOFTWARE\Policies\Microsoft\Windows Defender" name="DisableLocalAdminMerge" type="REG_DWORD" value="00000001"/></Registry>
-	<Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="HideExclusionsFromLocalAdmins" status="HideExclusionsFromLocalAdmins" image="10" changed="2024-08-19 02:30:22" uid="{962AAA59-FDDD-4427-A1DC-51C30FD3D100}"><Properties action="C" displayDecimal="0" default="0" hive="HKEY_LOCAL_MACHINE" key="SOFTWARE\Policies\Microsoft\Windows Defender" name="HideExclusionsFromLocalAdmins" type="REG_DWORD" value="00000001"/></Registry>
-</RegistrySettings>

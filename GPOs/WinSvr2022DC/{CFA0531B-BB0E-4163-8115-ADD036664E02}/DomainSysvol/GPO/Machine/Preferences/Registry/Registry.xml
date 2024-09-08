@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RegistrySettings clsid="{A3CCFC41-DFDB-43a5-8D26-0FE8B954DA51}"><Registry clsid="{9CD4B2F4-923D-47f5-A062-E897DD1DAD50}" name="LdapEnforceChannelBinding" status="LdapEnforceChannelBinding" image="10" changed="2024-09-08 21:12:00" uid="{C6693BD2-A07B-4073-A0A4-544EC85E75EF}" desc="Enforce LDAP Channel Binding requirements" bypassErrors="1"><Properties action="C" displayDecimal="1" default="0" hive="HKEY_LOCAL_MACHINE" key="SYSTEM\CurrentControlSet\Services\NTDS\Parameters" name="LdapEnforceChannelBinding" type="REG_DWORD" value="00000002"/><Filters/></Registry>
+</RegistrySettings>
