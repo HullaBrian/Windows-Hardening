@@ -4,7 +4,7 @@
   Source project:	https://github.com/SwiftOnSecurity/sysmon-config
   Source license:	Creative Commons Attribution 4.0 | You may privatize, fork, edit, teach, publish, or deploy for commercial use - with attribution in the text.
 
-  Fork version:	1.1
+  Fork version:	1.0
   Fork author:	Jonathan Beierle
   Fork project:	https://github.com/HullaBrian/Windows-Hardening
   Fork license:	<N/A>
@@ -194,6 +194,8 @@
 			<Image condition="begin with">C:\Program Files\Microsoft Monitoring Agent\</Image>
 			<ParentImage condition="is">C:\Program Files\Microsoft Monitoring Agent\MonitoringHost.exe</ParentImage>
 			<ParentImage condition="is">C:\Program Files\Microsoft Monitoring Agent\Agent\HealthService.exe</ParentImage>
+			<!-- SECTION: CyberForce Tools -->
+			<Image condition="begin with">C:\Tools\</Image>
 		</ProcessCreate>
 	</RuleGroup>
 
@@ -358,6 +360,8 @@
 			<Image condition="begin with">C:\Program Files\OMS Gateway\</Image>
 			<!-- SECTION: PRTG -->
 			<Image condition="is">C:\Program Files (x86)\PRTG Network Monitor\PRTG Probe.exe</Image>
+			<!-- CyberForce Tools-->
+			<Image condition="begin with">C:\Tools\</Image>
 		</NetworkConnect>
 	</RuleGroup>
 
@@ -475,6 +479,8 @@
 	<RuleGroup name="" groupRelation="or">
 		<ProcessAccess onmatch="exclude">
 			<!-- NOTE: Potentially noisy ProcessAccess Events in your environment can be excluded here -->
+			<!-- SECTION: CyberForce Tools -->
+			<SourceImage condition="begin with">C:\Tools\</SourceImage>
 		</ProcessAccess>
 	</RuleGroup>
 
@@ -843,6 +849,9 @@
 			<TargetObject condition="begin with">HKCR\iTunes.</TargetObject> <!--Apple: iTunes update noise-->
 			<!--WINEVT publishers noise-->
 			<TargetObject condition="is">HKLM\Software\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{945a8954-c147-4acd-923f-40c45405a658}</TargetObject> <!--Windows update-->
+			<!-- SECTION: CyberForce Tools -->
+			<Image condition="begin with">C:\Tools\</Image>
+			<TargetObject condition="contains">C:\Tools\</TargetObject>
 		</RegistryEvent>
 	</RuleGroup>
 
@@ -1248,6 +1257,8 @@
 			<QueryName condition="is">ocsp.int-x3.letsencrypt.org</QueryName>
 			<!-- SECTION: PRTG -->
 			<Image condition="is">C:\Program Files (x86)\PRTG Network Monitor\PRTG Probe.exe</Image>
+			<!-- SECTION: CyberForce Tools -->
+			<Image condition="begin with">C:\Tools\</Image>
 		</DnsQuery>
 	</RuleGroup>
 
