@@ -13,7 +13,7 @@
 	https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon
 -->
 
-<Sysmon schemaversion="4.50">
+<Sysmon schemaversion="4.81">
 	<!--SYSMON META CONFIG-->
 	<HashAlgorithms>md5,sha256,IMPHASH</HashAlgorithms> <!-- Both MD5 and SHA256 are the industry-standard algorithms. Remove IMPHASH if you do not use DLL import fingerprinting. -->
 	<CheckRevocation/> <!-- Check loaded drivers, log if their code-signing certificate has been revoked, in case malware stole one to sign a kernel driver -->
@@ -70,6 +70,7 @@
 			<CommandLine condition="is">C:\WINDOWS\system32\devicecensus.exe UserCxt</CommandLine>
 			<CommandLine condition="is">C:\Windows\System32\usocoreworker.exe -Embedding</CommandLine>
 			<ParentImage condition="is">C:\Windows\system32\SearchIndexer.exe</ParentImage> <!--Windows:Search: Launches many uninteresting sub-processes-->
+			<Image condition="is">C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe</Image>
 			<!--SECTION: Windows:svchost-->
 			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k appmodel -s StateRepository</CommandLine>
 			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k appmodel -p -s camsvc</CommandLine>
@@ -1276,6 +1277,7 @@
 	<!--
 	<RuleGroup name="" groupRelation="or">
 		<FileDelete onmatch="include">
+			
 		</FileDelete>
 	</RuleGroup>
 	-->
@@ -1323,6 +1325,17 @@
 		-->
 
 		<!--DATA: RuleName, UtcTime, ProcessGuid, ProcessId, User, Image, TargetFilename, Hashes, IsExecutable -->
+
+	<RuleGroup name="" groupRelation="or">
+		<FileDeleteDetected onmatch="include">
+			<TargetFilename condition="end with">.exe</TargetFilename>
+			<TargetFilename condition="end with">.ps1</TargetFilename>
+			<TargetFilename condition="end with">.bat</TargetFilename>
+			<TargetFilename condition="begin with">C:\Windows\Temp\</TargetFilename>
+			<IsExecutable condition="is">true</IsExecutable>
+		</FileDeleteDetected>
+	</RuleGroup>
+		
 
 	<!--SYSMON EVENT ID 255 : ERROR-->
 		<!--"This event is generated when an error occurred within Sysmon. They can happen if the system is under heavy load
