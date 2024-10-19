@@ -573,6 +573,7 @@
 			</Rule>
 			<!-- SECTION: Extra detections -->
 			<TargetFilename condition="end with">.searchConnector-ms</TargetFilename> <!--Attempt to enable WebClient service to coerce HTTP authentication in an LDAP relay attack-->
+			<TargetFilename condition="end with">.lnk></TargetFilename> <!--Find .lnk files - potentially used for malicious activity-->
 		</FileCreate>
 	</RuleGroup>
 
