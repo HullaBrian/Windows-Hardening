@@ -363,6 +363,8 @@
 			<Image condition="is">C:\Program Files (x86)\PRTG Network Monitor\PRTG Probe.exe</Image>
 			<!-- CyberForce Tools-->
 			<Image condition="begin with">C:\Tools\</Image>
+			<Image condition="is">C:\Program Files\Inductive Automation\Ignition\lib\runtime\jre-win\bin\java.exe</Image>
+			<Image condition="is">C:\Users\BlueTeam\.ignition\cache\resources\jxbrowser\7.12.1\chromium.exe</Image>
 		</NetworkConnect>
 	</RuleGroup>
 
