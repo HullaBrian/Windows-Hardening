@@ -482,6 +482,7 @@
 			<!-- NOTE: Potentially noisy ProcessAccess Events in your environment can be excluded here -->
 			<!-- SECTION: CyberForce Tools -->
 			<SourceImage condition="begin with">C:\Tools\</SourceImage>
+			<SourceImage condition="is">C:\Program Files\Elastic\Agent\data\elastic-agent-8.15.3-619758\components\agentbeat.exe</SourceImage>
 		</ProcessAccess>
 	</RuleGroup>
 
