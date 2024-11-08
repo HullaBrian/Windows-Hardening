@@ -601,6 +601,7 @@
 			<!--SECTION: Windows:Updates-->
 			<TargetFilename condition="begin with">C:\$WINDOWS.~BT\Sources\</TargetFilename> <!-- Windows: Feature updates containing lots of .exe and .sys-->
 			<Image condition="begin with">C:\Windows\winsxs\amd64_microsoft-windows</Image> <!-- Windows: Windows update-->
+			<Image condition="is">C:\Program Files\Elastic\Endpoint\elastic-endpoint.exe</Image>
 		</FileCreate>
 	</RuleGroup>
 
