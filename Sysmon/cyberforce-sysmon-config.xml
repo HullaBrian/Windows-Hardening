@@ -486,7 +486,8 @@
 			<!-- NOTE: Potentially noisy ProcessAccess Events in your environment can be excluded here -->
 			<!-- SECTION: CyberForce Tools -->
 			<SourceImage condition="begin with">C:\Tools\</SourceImage>
-			<SourceImage condition="end with">agentbeat.exe</SourceImage>
+			<SourceImage condition="is">C:\Program Files\Elastic\Agent\data\elastic-agent-8.15.3-619758\components\agentbeat.exe</SourceImage>
+			<SourceImage condition="is">C:\Program Files\Elastic\Endpoint\elastic-endpoint.exe</SourceImage>
 		</ProcessAccess>
 	</RuleGroup>
 
@@ -1266,6 +1267,7 @@
 			<Image condition="is">C:\Program Files (x86)\PRTG Network Monitor\PRTG Probe.exe</Image>
 			<!-- SECTION: CyberForce Tools -->
 			<Image condition="begin with">C:\Tools\</Image>
+			<Image condition="is">C:\Program Files\Elastic\Agent\data\elastic-agent-8.15.3-619758\components\agentbeat.exe</Image>
 		</DnsQuery>
 	</RuleGroup>
 
