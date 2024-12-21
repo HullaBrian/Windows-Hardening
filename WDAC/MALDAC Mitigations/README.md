@@ -1,3 +1,1 @@
-Windows Defender Application Control (WDAC) is perhaps one of the most powerful tools that can be used to block malicious code. However, while WDAC is often used for good, it can be used for evil as well. This blog post seeks to go in depth into an attack technique detailing how WDAC can be used to block Endpoint Detection and Response (EDR) solutions and assistance in lateral movement.
-
-Feel free to learn more at https://beierle.win/2024-12-20-Weaponizing-WDAC-Killing-the-Dreams-of-EDR/
+Windows Defender Application Control (WDAC) is perhaps one of the most powerful tools that can be used to block malicious code. However, while WDAC is often used for good, it can be used for evil as well. Feel free to learn more at https://beierle.win/2024-12-20-Weaponizing-WDAC-Killing-the-Dreams-of-EDR/
