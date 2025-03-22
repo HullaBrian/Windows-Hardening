@@ -1,0 +1,1 @@
+Get-DomainComputer -Domain <domain> | Get-DomainObjectAcl -ResolveGUIDs | ? { $_.SecurityIdentifier -match "<domain SID>-[\d]{4,10}" } | select @{Name="Computer";Expression={ConvertFrom-SID $_.ObjectSID}},objectdn,activedirectoryrights,objectacetype,@{Name="User/Group";Expression={ConvertFrom-SID $_.SecurityIdentifier}} | fl
